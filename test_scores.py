@@ -13,6 +13,9 @@ for score in testScores:
 # Assume first score is the largest
 maxScore = testScores[0]
 
+# Assume it is also the lowest
+minScore = testScores[0]
+
 # Set up our variable for summing all test scores to help compute the average
 totalScore = 0
 
@@ -26,6 +29,10 @@ for score in testScores:
     # Check current score against high score and save it as high score if it is bigger
     if score > maxScore:
         maxScore = score
+        
+    # Check current score against low score and save it as low score if it is less
+    if score < minScore:
+        minScore = score
 
     # Add current score to total of other scores and also increment count of how
     #  many scores have been checked
@@ -36,6 +43,7 @@ for score in testScores:
 print()
 print("Results from processing scores...")
 print("Highest Test Score: ", maxScore)
+print("Lowest Test Score: ", minScore)
 print("Average Test Score: ", totalScore / testsChecked)
 
 print("-------------------------------------------------------------------------------")
